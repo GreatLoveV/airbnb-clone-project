@@ -123,3 +123,74 @@ Represents financial transactions related to bookings.
 - `status`: e.g., completed, pending, failed
 
 **Relationship**: A payment is linked to one booking.
+
+---
+
+## 🚀 Feature Breakdown
+
+The Airbnb Clone project includes several essential features that collectively deliver a complete booking platform experience. Each feature mirrors real-world functionality found in modern hospitality applications.
+
+### **1. User Management**
+Allows users to sign up, log in, and manage their profiles. This includes roles such as guests and hosts, each with specific capabilities tailored to their needs on the platform.
+
+### **2. Property Management**
+Enables hosts to list, update, and remove properties from the platform. Each property includes details such as description, images, location, and price, making it easy for guests to browse and select accommodations.
+
+### **3. Booking System**
+Facilitates the process of reserving a property for specific dates. Guests can book available properties, and the system handles availability, prevents overlaps, and stores booking history.
+
+### **4. Review System**
+Allows guests to leave ratings and feedback after their stay. This promotes transparency and helps future guests make informed decisions based on previous experiences.
+
+### **5. Payment Integration**
+Processes secure payments linked to bookings. This feature manages transaction flow, tracks payment status, and supports multiple payment methods to ensure a seamless financial experience.
+
+### **6. Security and Authentication**
+Implements robust security measures including password hashing, token-based authentication, and access control to protect user data and restrict unauthorized access to sensitive features.
+
+### **7. API Integration**
+Exposes RESTful or GraphQL APIs to allow front-end communication with the backend. These APIs facilitate core operations such as booking, authentication, and property listing, making the system modular and scalable.
+
+### **8. CI/CD Pipeline Support**
+Integrates continuous integration and deployment workflows using tools like GitHub Actions or Docker. This ensures reliable testing, building, and deployment processes for the development team.
+
+---
+
+## 🔒 API Security
+
+Securing the backend APIs is crucial to protecting sensitive user data, ensuring safe transactions, and maintaining trust within the platform. The following key security measures will be implemented to safeguard the application and user interactions:
+
+### **1. Authentication**
+User authentication will be enforced using secure, token-based methods such as JWT (JSON Web Tokens). This ensures that only authorized users can access the platform’s features and resources, protecting user privacy and preventing unauthorized access.
+
+**Why it's crucial**: Without proper authentication, malicious users could gain access to sensitive user data, modify accounts, or perform unauthorized actions, compromising the integrity of the system.
+
+### **2. Authorization**
+Once authenticated, users will be assigned specific roles (e.g., guest, host, admin) with access restrictions based on their permissions. Role-based access control (RBAC) will ensure that users can only interact with the features and data relevant to their role.
+
+**Why it's crucial**: Proper authorization prevents users from accessing data or actions outside their scope (e.g., guests accessing host management features), maintaining the application’s integrity and minimizing potential risks.
+
+### **3. Rate Limiting**
+To mitigate the risk of abuse, rate limiting will be implemented to prevent excessive API calls from a single user or IP address. This helps protect the server from overload and prevents abuse of the system through brute-force attacks.
+
+**Why it's crucial**: Rate limiting ensures that the system remains stable by blocking malicious actors attempting to overload the server with requests. It also helps prevent denial-of-service (DoS) attacks and protects against credential stuffing attempts.
+
+### **4. Input Validation and Sanitization**
+All user input will be validated and sanitized to prevent malicious data from entering the system. This includes checks against SQL injection, cross-site scripting (XSS), and other common web vulnerabilities.
+
+**Why it's crucial**: Without proper validation, attackers could inject harmful code or queries into the system, leading to data corruption, unauthorized access, or data leakage.
+
+### **5. Secure Payments**
+Payments will be handled through secure, encrypted payment gateways that comply with PCI DSS standards. Payment data will be tokenized to prevent direct exposure of sensitive financial information.
+
+**Why it's crucial**: Ensuring secure payment processing is vital to protecting users’ financial information. Without proper security measures, payment details could be intercepted, leading to financial fraud and data breaches.
+
+### **6. HTTPS**
+All communication between the client and server will be encrypted using HTTPS (SSL/TLS). This ensures that any data exchanged between the user and the backend is securely transmitted, preventing man-in-the-middle (MITM) attacks.
+
+**Why it's crucial**: HTTP traffic is vulnerable to interception and tampering. Using HTTPS guarantees that all data, especially sensitive information like login credentials and payment details, is securely transmitted across the network.
+
+### **7. Logging and Monitoring**
+To detect and respond to potential threats, the application will implement logging and monitoring solutions. These will track user actions, system events, and unusual activity, providing valuable data for identifying and mitigating security threats.
+
+**Why it's crucial**: Monitoring allows the team to identify suspicious activity early, enabling timely intervention. Without proper logging, it’s difficult to detect security breaches or unauthorized behavior in a timely manner.
