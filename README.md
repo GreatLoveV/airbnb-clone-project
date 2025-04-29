@@ -59,3 +59,67 @@ The Airbnb Clone project uses a modern and scalable technology stack:
 
 - **GitHub Actions**  
   A CI/CD automation tool that helps run tests, perform builds, and deploy the application automatically whenever code changes are pushed to the repository.
+
+  ---
+
+  ## 🗄️ Database Design
+
+The database structure is designed to reflect the core components of an Airbnb-like booking platform. Below are the key entities and their relationships:
+
+### **1. Users**
+Represents the individuals who interact with the platform (hosts or guests).
+- `id`: Unique identifier
+- `username`: User's login name
+- `email`: Contact information
+- `password_hash`: Encrypted password
+- `role`: Host or guest
+
+**Relationship**: A user can create multiple properties and make multiple bookings.
+
+---
+
+### **2. Properties**
+Represents listings available for booking.
+- `id`: Unique property identifier
+- `owner_id`: Foreign key to the user who owns the property
+- `title`: Name of the property
+- `location`: Geographic location
+- `price_per_night`: Cost for one night
+
+**Relationship**: Each property is owned by one user and can have many bookings and reviews.
+
+---
+
+### **3. Bookings**
+Tracks reservations made by guests.
+- `id`: Unique booking ID
+- `user_id`: Foreign key to the guest who made the booking
+- `property_id`: Foreign key to the booked property
+- `check_in_date`: Start date of the booking
+- `check_out_date`: End date of the booking
+
+**Relationship**: A booking belongs to one user and one property.
+
+---
+
+### **4. Reviews**
+Contains feedback left by guests after a stay.
+- `id`: Unique review ID
+- `user_id`: Reviewer’s ID (guest)
+- `property_id`: Reviewed property ID
+- `rating`: Numeric rating (e.g., 1–5)
+- `comment`: Text feedback
+
+**Relationship**: A user can leave multiple reviews, and a property can have many reviews.
+
+---
+
+### **5. Payments**
+Represents financial transactions related to bookings.
+- `id`: Unique payment ID
+- `booking_id`: Associated booking
+- `amount`: Payment amount
+- `payment_method`: e.g., credit card, PayPal
+- `status`: e.g., completed, pending, failed
+
+**Relationship**: A payment is linked to one booking.
