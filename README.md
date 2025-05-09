@@ -198,7 +198,7 @@ To detect and respond to potential threats, the application will implement loggi
 
 ---
 
-## 🚀 CI/CD Pipeline
+## 🚀 CI/CD Pipeline 
 
 ### **What is CI/CD?**
 CI/CD stands for Continuous Integration and Continuous Delivery (or Continuous Deployment). These are software development practices aimed at improving the speed and quality of the development process by automating the building, testing, and deployment of code.
